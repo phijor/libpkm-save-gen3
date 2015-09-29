@@ -3,11 +3,11 @@
 #include <string.h>
 
 #include "message.h"
-#include "save_storage.h"
+#include "storage.h"
 #include "save.h"
-#include "save_unpacked.h"
-#include "save_boxes.h"
-#include "save_char_encoding.h"
+#include "unpacked.h"
+#include "boxes.h"
+#include "char_encoding.h"
 
 int save_storage_party_get(union save_unpacked_t* save,
                            struct save_pokemon_t* party) {

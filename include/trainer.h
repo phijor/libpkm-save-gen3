@@ -2,7 +2,7 @@
 #define SAVE_TRAINER_H
 
 #include <inttypes.h>
-#include "save_common.h"
+#include "common.h"
 
 union save_unpacked_t;
 

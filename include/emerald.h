@@ -3,12 +3,12 @@
 
 #include <inttypes.h>
 
-#include "save_common.h"
-#include "save_pokedex.h"
-#include "save_pokemon.h"
-#include "save_boxes.h"
-#include "save_storage.h"
-#include "save_link.h"
+#include "common.h"
+#include "pokedex.h"
+#include "pokemon.h"
+#include "boxes.h"
+#include "storage.h"
+#include "link.h"
 
 #define SAVE_WALDAS_PHRASE_LENGTH 16
 

@@ -1,10 +1,10 @@
 #include <stdlib.h>
 
 #include "message.h"
-#include "save_trainer.h"
+#include "trainer.h"
 #include "save.h"
-#include "save_unpacked.h"
-#include "save_char_encoding.h"
+#include "unpacked.h"
+#include "char_encoding.h"
 
 enum save_exit_code_t save_trainer_money_get(union save_unpacked_t* save,
                                              uint32_t* money) {

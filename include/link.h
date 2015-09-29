@@ -3,7 +3,7 @@
 
 #include <inttypes.h>
 
-#include "save_pokemon.h"
+#include "pokemon.h"
 
 #define SAVE_LINK_TEAM_SIZE 3
 #define SAVE_LINK_RESULTS 5

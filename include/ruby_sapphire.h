@@ -3,12 +3,12 @@
 
 #include <inttypes.h>
 
-#include "save_common.h"
-#include "save_link.h"
-#include "save_pokedex.h"
-#include "save_pokemon.h"
-#include "save_boxes.h"
-#include "save_storage.h"
+#include "common.h"
+#include "link.h"
+#include "pokedex.h"
+#include "pokemon.h"
+#include "boxes.h"
+#include "storage.h"
 
 struct __attribute__((packed)) save_ruby_sapphire_items_t {
     struct save_item_t pc_storage[50];

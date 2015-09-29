@@ -2,7 +2,7 @@
 #include <assert.h>
 
 #include "message.h"
-#include "save_integrity.h"
+#include "integrity.h"
 
 uint16_t save_checksum_get(void* buffer, size_t length) {
     uint32_t checksum = 0;

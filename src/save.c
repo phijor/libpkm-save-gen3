@@ -3,8 +3,8 @@
 
 #include "message.h"
 #include "save.h"
-#include "save_integrity.h"
-#include "save_unpacked.h"
+#include "integrity.h"
+#include "unpacked.h"
 
 #define SAVE_UNPACKED_SIZE 53380
 

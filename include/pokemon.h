@@ -4,8 +4,8 @@
 #include <stddef.h>
 #include <inttypes.h>
 
-#include "save_common.h"
-#include "save_natures.h"
+#include "common.h"
+#include "natures.h"
 
 #define SAVE_POKEMON_NICKNAME_SIZE 10
 #define SAVE_POKEMON_NICKNAME_SIZE_UNPACKED (SAVE_POKEMON_NICKNAME_SIZE + 1)

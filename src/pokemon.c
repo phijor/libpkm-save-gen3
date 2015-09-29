@@ -2,9 +2,9 @@
 #include <assert.h>
 
 #include "message.h"
-#include "save_pokemon.h"
-#include "save_char_encoding.h"
-#include "save_natures.h"
+#include "pokemon.h"
+#include "char_encoding.h"
+#include "natures.h"
 
 const struct save_pokemon_data_permutation_t save_pokemon_data_permutations[] = {
   // G  A  E  M

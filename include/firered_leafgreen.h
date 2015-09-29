@@ -3,11 +3,11 @@
 
 #include <inttypes.h>
 
-#include "save_common.h"
-#include "save_pokedex.h"
-#include "save_pokemon.h"
-#include "save_boxes.h"
-#include "save_storage.h"
+#include "common.h"
+#include "pokedex.h"
+#include "pokemon.h"
+#include "boxes.h"
+#include "storage.h"
 
 struct __attribute__((packed)) save_firered_leafgreen_items_t {
     struct save_item_t pc_storage[30];

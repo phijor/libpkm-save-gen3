@@ -3,7 +3,7 @@
 
 #include <stddef.h>
 
-#include "save_common.h"
+#include "common.h"
 
 unsigned char save_char_table[256];
 

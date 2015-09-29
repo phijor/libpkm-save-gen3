@@ -3,8 +3,8 @@
 
 #include <inttypes.h>
 
-#include "save_common.h"
-#include "save_pokemon.h"
+#include "common.h"
+#include "pokemon.h"
 
 #define SAVE_BOXES 14
 #define SAVE_BOX_SLOTS 30
