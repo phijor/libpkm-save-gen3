@@ -2,7 +2,6 @@
 #include <assert.h>
 #include <string.h>
 
-#include "message.h"
 #include "storage.h"
 #include "save.h"
 #include "unpacked.h"
@@ -24,7 +23,6 @@ int save_storage_party_get(union save_unpacked_t* save,
             party_extended = save->emer.party;
             break;
         default:
-            message("E", "Game type not implemented.\n");
             exit(EXIT_FAILURE);
     }
 
@@ -39,7 +37,6 @@ int save_storage_party_get(union save_unpacked_t* save,
 int save_storage_box_get(union save_unpacked_t* save, size_t index,
                          struct save_box_unpacked_t* box) {
     if (index >= SAVE_BOXES) {
-        message("E", "Cannot access box %ld: Out of range.\n", index);
         return EXIT_FAILURE;
     }
     save_char_t* name_ptr;
@@ -63,7 +60,6 @@ int save_storage_box_get(union save_unpacked_t* save, size_t index,
             pkm_ptr = save->rusa.boxes.pokemon[index];
             break;
         default:
-            message("E", "Game type not implemented.\n");
             exit(EXIT_FAILURE);
     }
 
@@ -84,7 +80,6 @@ uint32_t save_storage_party_size_get(union save_unpacked_t* save) {
         case EMERALD:
             return save->emer.party_size;
         default:
-            message("E", "Game type not implemented.\n");
             exit(EXIT_FAILURE);
     }
 }

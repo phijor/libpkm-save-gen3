@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <assert.h>
 
-#include "message.h"
 #include "pokemon.h"
 #include "char_encoding.h"
 #include "natures.h"
@@ -115,9 +114,6 @@ int save_pokemon_data_integrity_check(struct save_pokemon_t* pokemon) {
     save_pokemon_xor_crypt(pokemon);
 
     if (checksum != pokemon->checksum) {
-        message("W+", "Pokémon checksum-mismatch:\n");
-        message("",  "Checksum calculated:   %#x\n", checksum);
-        message("-", "Checksum in save file: %#x\n", pokemon->checksum);
         return EXIT_FAILURE;
     }
     return EXIT_SUCCESS;

@@ -1,6 +1,5 @@
 #include <stdlib.h>
 
-#include "message.h"
 #include "pokedex.h"
 #include "save.h"
 #include "unpacked.h"
@@ -40,7 +39,6 @@ enum save_pokedex_status_t save_pokedex_get(union save_unpacked_t* save,
             seen[2] = &(save->emer.pokedex_seen_c);
             break;
         default:
-            message("E", "Game type not implemented.\n");
             exit(EXIT_FAILURE);
     }
     int is_seen = 1;
@@ -65,7 +63,6 @@ enum save_pokedex_status_t save_pokedex_get(union save_unpacked_t* save,
             owned = &(save->emer.pokedex_owned);
             break;
         default:
-            message("E", "Game type not implemented.\n");
             exit(EXIT_FAILURE);
     }
     if (save_pokedex_basic_get(owned, index)) {
@@ -100,7 +97,6 @@ int save_pokedex_set(union save_unpacked_t* save, uint16_t index,
             pokedex_owned = &(save->emer.pokedex_owned);
             break;
         default:
-            message("E", "Game type not implemented.\n");
             exit(EXIT_FAILURE);
     }
     switch (status) {
@@ -121,7 +117,6 @@ int save_pokedex_set(union save_unpacked_t* save, uint16_t index,
             }
             break;
         default:
-            message("E", "Unknown status %d. Could not set in Pokédex.\n", status);
             return POKEDEX_ERROR;
     }
     return POKEDEX_SUCCESS;

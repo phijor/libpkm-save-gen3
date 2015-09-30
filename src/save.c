@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "message.h"
 #include "save.h"
 #include "integrity.h"
 #include "unpacked.h"
@@ -38,7 +37,6 @@ int save_unpack(struct save_block_t* block, union save_unpacked_t* save) {
     size_t zero_section_offset = save_section_offset_get(block);
 
     if (zero_section_offset >= SAVE_SECTIONS_PER_BLOCK) {
-        message("E", "Could not locate first section of block.\n");
         return EXIT_FAILURE;
     }
 

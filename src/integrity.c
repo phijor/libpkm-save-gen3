@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <assert.h>
 
-#include "message.h"
 #include "integrity.h"
 
 uint16_t save_checksum_get(void* buffer, size_t length) {
@@ -29,11 +28,6 @@ int save_section_data_integrity_check(struct save_section_t* section) {
     uint16_t checksum = save_checksum_get(section->data, section_size);
 
     if (checksum != section->signature.checksum) {
-        message("W+", "Checksum of section with ID %u seems to be incorrect\n",
-                section->signature.section_id);
-        message(" ", "Checksum present in section:   %X\n",
-                section->signature.checksum);
-        message("-", "Checksum calculated from data: %X\n", checksum);
         return EXIT_FAILURE;
     }
     return EXIT_SUCCESS;
@@ -69,9 +63,6 @@ int save_file_integrity_check(struct save_file_t* file) {
 
         if (save_block_integrity_check(current_block) == EXIT_FAILURE) {
             exit_status = EXIT_FAILURE;
-            message("W",
-                    "One ore more sections in block %ld seem to be corrupted\n",
-                    i);
         }
     }
     return exit_status;
