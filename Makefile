@@ -26,7 +26,7 @@ DLINK_FLAGS =
 # Destination directory, like a jail or mounted system
 DESTDIR = /
 # Install path
-INSTALL_PREFIX = usr/bin
+INSTALL_PREFIX = usr/
 #### END PROJECT SETTINGS ####
 
 # Generally should not need to edit below this line
@@ -152,8 +152,9 @@ dirs:
 .PHONY: install
 install:
 	@echo "Installing to $(DESTDIR)$(INSTALL_PREFIX)"
-	@mkdir -p $(DESTDIR)$(INSTALL_PREFIX)
-	@$(INSTALL_PROGRAM) $(BIN_PATH)/$(BIN_NAME) $(DESTDIR)$(INSTALL_PREFIX)
+	@mkdir -p $(DESTDIR)$(INSTALL_PREFIX)/{lib,include/$(basename $(BIN_NAME))}
+	@$(INSTALL_PROGRAM) $(BIN_PATH)/$(BIN_NAME) $(DESTDIR)$(INSTALL_PREFIX)/lib/
+	@$(INSTALL_DATA) include/* $(DESTDIR)$(INSTALL_PREFIX)/include/$(basename $(BIN_NAME))/
 
 # Uninstalls the program
 .PHONY: uninstall
